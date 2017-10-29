@@ -1,0 +1,27 @@
+NAME="ghostscript-fonts-other"
+VERSION=6.0
+RELEASE=1
+
+SUMMARY="Miscellaneous fonts for ghostscript"
+DESCRIPTION="Miscellaneous fonts derived from the free Hershey fonts, with improvements for ghostscript"
+CATEGORY="Graphics"
+HOMEPAGE="https://sourceforge.net/projects/gs-fonts/"
+SRC_URI="mirror://sourceforge/gs-fonts/${P}.tar.gz"
+
+SRC_DIR=fonts
+
+src_compile() {
+	:
+}
+
+src_test() {
+	:
+}
+
+src_install() {
+	dodir /usr/share/ghostscript
+	cp -r ${S} ${D}/usr/share/ghostscript
+	rm -rf ${D}/usr/share/ghostscript/fonts/CYGWIN-PATCHES
+}
+
+ARCH="noarch"
